@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  root to: 'pages#index'
+
   defaults format: :json do
     get 'deals/index'
   end
