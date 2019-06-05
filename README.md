@@ -1,24 +1,37 @@
-# README
+# PipelineDeals chart 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Demo
+[pipelinedeals-chart.herokuapp.com](https://pipelinedeals-chart.herokuapp.com)
 
-Things you may want to cover:
+## System Dependencies
+- Ruby 2.6.3 (install with [rbenv](https://github.com/sstephenson/rbenv))
+- Rubygems
+- Bundler (`gem install bundler`)
+- Foreman (`gem install foreman`)
 
-* Ruby version
+## Installation and usage
+```
+bundle install
+```
+```
+foreman start -f Procfile.dev -p 3000
+```
 
-* System dependencies
+## Tests
+```
+bundle exec rspec spec/
+```
 
-* Configuration
+### Implementation details
+Application displays single page containing a column chart. Data is from PipelineDeals API.
 
-* Database creation
+As future improvements I suggest to implement caching mechanism for external API (e.g. by using Redis) and/or rate limiting for internal API.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### What I did
+- PipelineDeals API wrapper
+- service object for calculating totals
+- Controller action rendering JSON
+- unit tests
+- basic interface with React
+- proposed improvements
+- deployed to Heroku
